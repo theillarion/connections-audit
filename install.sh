@@ -1,6 +1,6 @@
 #!/bin/sh
 # conn-audit installer — POSIX sh, можно запускать как:
-#   sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/theillarion/tg-net-bot/master/conn-audit/install.sh)"
+#   sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/theillarion/connections-audit/master/install.sh)"
 set -eu
 
 if [ "$(id -u)" -ne 0 ]; then
@@ -8,7 +8,7 @@ if [ "$(id -u)" -ne 0 ]; then
     exit 1
 fi
 
-REPO_RAW=${REPO_RAW:-https://raw.githubusercontent.com/theillarion/tg-net-bot/master/conn-audit}
+REPO_RAW=${REPO_RAW:-https://raw.githubusercontent.com/theillarion/connections-audit/master}
 REPO_RAW=${REPO_RAW%/}
 DATA=${DATA:-/var/lib/conn-audit}
 BIN=${BIN:-/usr/local/sbin/conn_audit.py}

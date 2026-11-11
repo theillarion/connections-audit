@@ -1,18 +1,18 @@
-# conn-audit
+# connections-audit
 
 Сбор IP, которые стучатся в сервер: `conntrack -E` + `tcpdump` SYN, SQLite, отчёты и экспорт в nftables/ipset.
 
 ## Установка одной командой
 
 ```sh
-sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/theillarion/tg-net-bot/master/conn-audit/install.sh)"
+sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/theillarion/connections-audit/master/install.sh)"
 ```
 
 С фиксированным коммитом:
 
 ```sh
 COMMIT=<sha>
-sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/theillarion/tg-net-bot/$COMMIT/conn-audit/install.sh)"
+sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/theillarion/connections-audit/$COMMIT/install.sh)"
 ```
 
 ## Обновление
@@ -22,8 +22,8 @@ sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/theillarion/tg-net-bo
 Если хочешь зафиксировать источник Python-файла:
 
 ```sh
-sudo env REPO_RAW=https://raw.githubusercontent.com/theillarion/tg-net-bot/<sha>/conn-audit \
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/theillarion/tg-net-bot/<sha>/conn-audit/install.sh)"
+sudo env REPO_RAW=https://raw.githubusercontent.com/theillarion/connections-audit/<sha> \
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/theillarion/connections-audit/<sha>/install.sh)"
 ```
 
 ## Что ставится
@@ -51,7 +51,7 @@ journalctl -u conn-audit-live -f
 ## Удаление
 
 ```sh
-sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/theillarion/tg-net-bot/master/conn-audit/uninstall.sh)"
+sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/theillarion/connections-audit/master/uninstall.sh)"
 # или с удалением базы:
 # sudo sh -c "$(curl -fsSL .../uninstall.sh) --purge"
 ```
